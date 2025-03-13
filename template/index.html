@@ -2412,38 +2412,38 @@ Contact form START -->
                 </figure>
 
                 <!-- Form START -->
-                <form name="contact" method="POST" data-netlify="true" class="row g-3 position-relative">
+                <!-- <form name="contact" method="POST" data-netlify="true" class="row g-3 position-relative"> -->
                   <!-- Name -->
-                  <div class="col-md-6 col-lg-12 col-xl-6">
+                  <!-- <div class="col-md-6 col-lg-12 col-xl-6">
                     <label class="form-label" name="FName">First name *</label>
                     <input
                       type="text"
                       class="form-control"
                       aria-label="First name"
                     />
-                  </div>
+                  </div> -->
 
                   <!-- Last name -->
-                  <div class="col-md-6 col-lg-12 col-xl-6">
+                  <!-- <div class="col-md-6 col-lg-12 col-xl-6">
                     <label class="form-label" name="LName">Last name *</label>
                     <input
                       type="text"
                       class="form-control"
                       aria-label="Last name"
                     />
-                  </div>
+                  </div> -->
                   <!-- Email -->
-                  <div class="col-md-6 col-lg-12 col-xl-6">
+                  <!-- <div class="col-md-6 col-lg-12 col-xl-6">
                     <label class="form-label" name="Email">Email *</label>
                     <input type="email" class="form-control" />
-                  </div>
+                  </div> -->
                   <!-- Phone number -->
-                  <div class="col-md-6 col-lg-12 col-xl-6">
+                  <!-- <div class="col-md-6 col-lg-12 col-xl-6">
                     <label class="form-label" name="#Phone">Phone number *</label>
                     <input type="text" class="form-control" />
-                  </div>
+                  </div> -->
                   <!-- Select subject -->
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <label class="form-label" name="Subject">Select subject</label>
                     <select
                       class="form-select js-choice z-index-9"
@@ -2456,20 +2456,74 @@ Contact form START -->
                       <option>Media</option>
                       <option>Partnerships</option>
                     </select>
-                  </div>
+                  </div> -->
                   <!-- Comment -->
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <label class="form-label" name="Message">Message *</label>
                     <textarea placeholder="Tell us how we can assist you!" class="form-control" rows="3"></textarea>
-                  </div>
+                  </div> -->
                   <!-- Button -->
-                  <div class="col-12">
+                  <!-- <div class="col-12">
                     <button type="submit" class="btn btn-primary mb-0">
                       Send message
                     </button>
-                  </div>
-                </form>
+                  </div> -->
+                <!-- </form> -->
                 <!-- Form END -->
+
+                <form name="contact" method="POST" data-netlify="true" class="row g-3 position-relative">
+                  <!-- Hidden input for Netlify detection -->
+                  <input type="hidden" name="form-name" value="contact" />
+              
+                  <!-- First Name -->
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                      <label class="form-label" for="FName">First name *</label>
+                      <input type="text" id="FName" name="FName" class="form-control" aria-label="First name" required />
+                  </div>
+              
+                  <!-- Last Name -->
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                      <label class="form-label" for="LName">Last name *</label>
+                      <input type="text" id="LName" name="LName" class="form-control" aria-label="Last name" required />
+                  </div>
+              
+                  <!-- Email -->
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                      <label class="form-label" for="Email">Email *</label>
+                      <input type="email" id="Email" name="Email" class="form-control" required />
+                  </div>
+              
+                  <!-- Phone Number -->
+                  <div class="col-md-6 col-lg-12 col-xl-6">
+                      <label class="form-label" for="Phone">Phone number *</label>
+                      <input type="text" id="Phone" name="Phone" class="form-control" required />
+                  </div>
+              
+                  <!-- Select Subject -->
+                  <div class="col-12">
+                      <label class="form-label" for="Subject">Select subject</label>
+                      <select class="form-select js-choice z-index-9" id="Subject" name="Subject" aria-label="Select subject">
+                          <option value="">Select subject</option>
+                          <option value="General Inquiry">General Inquiry</option>
+                          <option value="Student Enrollment">Student Enrollment</option>
+                          <option value="Sponsorship">Sponsorship</option>
+                          <option value="Media">Media</option>
+                          <option value="Partnerships">Partnerships</option>
+                      </select>
+                  </div>
+              
+                  <!-- Message -->
+                  <div class="col-12">
+                      <label class="form-label" for="Message">Message *</label>
+                      <textarea id="Message" name="Message" placeholder="Tell us how we can assist you!" class="form-control" rows="3" required></textarea>
+                  </div>
+              
+                  <!-- Submit Button -->
+                  <div class="col-12">
+                      <button type="submit" class="btn btn-primary mb-0">Send message</button>
+                  </div>
+              </form>
+              
               </div>
             </div>
             <!-- Contact form END -->

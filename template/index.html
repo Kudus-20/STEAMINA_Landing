@@ -2903,7 +2903,7 @@ Newsletter START -->
                   <!-- Title -->
                   <h2>Stay Updated on Everything STEAMINA</h2>
                   <!-- Form -->
-                  <form name="Email-List" method="POST" data-netlify="true"
+                  <!-- <form name="Email-List" method="POST" data-netlify="true"
                     class="row align-items-center justify-content-center mt-3"
                   >
                     <div class="col-lg-8">
@@ -2923,7 +2923,29 @@ Newsletter START -->
                         </div>
                       </div>
                     </div>
-                  </form>
+                  </form> -->
+                  <form name="Email-List" method="POST" data-netlify="true"
+                    class="row align-items-center justify-content-center mt-3">
+                    
+                    <!-- Hidden input for Netlify detection -->
+                    <input type="hidden" name="form-name" value="Email-List" />
+
+                    <div class="col-lg-8">
+                        <div class="bg-body shadow rounded-pill p-2">
+                            <div class="input-group">
+                                <input class="form-control border-0 me-1" 
+                                    type="email" 
+                                    name="email" 
+                                    placeholder="Enter your email" 
+                                    required />
+                                <button type="submit" class="btn btn-blue mb-0 rounded-pill">
+                                    Subscribe!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
                 </div>
               </div>
               <!-- Row END -->

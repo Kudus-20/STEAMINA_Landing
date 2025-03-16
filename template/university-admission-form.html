@@ -181,9 +181,10 @@ Main part START -->
 
 
 				<!-- STEAMINA Application Form - Supports Individual & School Applications -->
-				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4">
+				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4" onsubmit="handleNetlifySubmission(event)">
 					<!-- Hidden input for Netlify detection -->
 					<input type="hidden" name="form-name" value="STEAMINA-Application" />
+					<input type="hidden" name="bot-field" />
 
 					<!-- Step 1: Select Application Type -->
 					<div class="col-12 mb-3">
@@ -236,14 +237,6 @@ Main part START -->
 							<label>Phone Number *</label>
 							<input type="tel" name="Phone Number" class="form-control" required>
 						</div>
-						<div class="col-12 mb-3">
-							<label>Current School Name *</label>
-							<input type="text" name="School" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Current Grade Level *</label>
-							<input type="text" name="Grade Level" class="form-control" required>
-						</div>
 
 						<h4 class="mt-4">Parent/Guardian Information</h4>
 						<div class="col-12 mb-3">
@@ -279,29 +272,13 @@ Main part START -->
 							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
 						</div>
 
-						<h4 class="mt-4">Additional Information</h4>
-						<div class="col-12 mb-3">
-							<label>Emergency Contact Name & Phone Number *</label>
-							<input type="text" name="Emergency Contact" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>How Did You Hear About STEAMINA? *</label>
-							<select class="form-select" name="How Heard" required>
-								<option value="">Select</option>
-								<option value="Social Media">Social Media</option>
-								<option value="School">School</option>
-								<option value="Friend">Friend</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-
 						<div class="col-12 text-end">
 							<button type="submit" class="btn btn-primary">Submit Application</button>
 						</div>
 					</div>
 
 					<!-- School Application Fields -->
-					<div class="mt-0" id="schoolFields" style="display: none;">
+					<div id="schoolFields" style="display: none;">
 						<h4 class="mt-4">School Information</h4>
 						<div class="col-12 mb-3">
 							<label>School Name *</label>
@@ -311,64 +288,10 @@ Main part START -->
 							<label>School Address (City & Country) *</label>
 							<input type="text" name="School Address" class="form-control" required>
 						</div>
-						<div class="col-12 mb-3">
-							<label>School Representative Name *</label>
-							<input type="text" name="Representative Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Representative Email *</label>
-							<input type="email" name="Representative Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Representative Phone Number *</label>
-							<input type="tel" name="Representative Phone" class="form-control" required>
-						</div>
-						
-						
-						
 						<h4 class="mt-4">Students Information</h4>
-						<div>
-							<div id="studentsList"></div>
-							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
-	
-						</div>
-						<!-- <div id="studentsList">
-						
-							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
-						</div> -->
-
-
-
-
-						<h4 class="mt-4">Program Interest & Goals</h4>
-						<div class="col-12 mb-3">
-							<label>Why do you want to participate in STEAMINA? *</label>
-							<textarea name="Why Participate" class="form-control" rows="3" required></textarea>
-						</div>
-						<div class="col-12 mb-3">
-							<label>What do you hope your students will gain from the program? *</label>
-							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
-						</div>
-
-						<h4 class="mt-4">Additional Information</h4>
-						
-						<div class="col-12 mb-3">
-							<label>How Did You Hear About STEAMINA? *</label>
-							<select class="form-select" name="How Heard" required>
-								<option value="">Select</option>
-								<option value="Social Media">Social Media</option>
-								<option value="School">Email</option>
-								<option value="Friend">Friend</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-
-						<div class="col-12 text-end">
-							<button type="submit" class="btn btn-primary">Submit Application</button>
-						</div>
+						<div id="studentsList"></div>
+						<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
 					</div>
-
-
 				</form>
 
 			</div>
@@ -397,94 +320,50 @@ Main part END -->
 <script src="assets/js/functions.js"></script>
 
 <script>
-    document.getElementById('applicationType').addEventListener('change', function() {
+    document.getElementById('applicationType').addEventListener('change', function () {
         let type = this.value;
         document.getElementById('individualFields').style.display = (type === 'Individual') ? 'block' : 'none';
         document.getElementById('schoolFields').style.display = (type === 'School') ? 'block' : 'none';
     });
 
-	let studentCounter = 1;
-    document.getElementById('addStudent').addEventListener('click', function() {
+    let studentCounter = 1;
+    document.getElementById('addStudent').addEventListener('click', function () {
         let studentList = document.getElementById('studentsList');
         let newStudent = document.createElement('div');
         newStudent.classList.add('student-entry', 'mt-3', 'p-3', 'border', 'rounded');
-        newStudent.innerHTML = `
-            			<h4 class="mt-4">Student ${studentCounter}</h4>
-						<div class="col-12 mb-3">
-							<label>First Name *</label>
-							<input type="text" name="First Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Last Name *</label>
-							<input type="text" name="Last Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Date of Birth *</label>
-							<input type="date" name="Date of Birth" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Gender *</label>
-							<select class="form-select" name="Gender" required>
-								<option value="">Select</option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-								<option value="Other">Other</option>
-								<option value="Prefer Not to Say">Prefer Not to Say</option>
-							</select>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Nationality *</label>
-							<input type="text" name="Nationality" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>City & Country of Residence *</label>
-							<input type="text" name="City & Country" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Email Address *</label>
-							<input type="email" name="Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Phone Number *</label>
-							<input type="tel" name="Phone Number" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Current School Name *</label>
-							<input type="text" name="School" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Current Grade Level *</label>
-							<input type="text" name="Grade Level" class="form-control" required>
-						</div>
 
-						<h4 class="mt-4">Parent/Guardian Information</h4>
-						<div class="col-12 mb-3">
-							<label>Full Name *</label>
-							<input type="text" name="Parent Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Relationship to Applicant *</label>
-							<select class="form-select" name="Parent Relationship" required>
-								<option value="">Select</option>
-								<option value="Mother">Mother</option>
-								<option value="Father">Father</option>
-								<option value="Guardian">Guardian</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Parent Email *</label>
-							<input type="email" name="Parent Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Parent Phone *</label>
-							<input type="tel" name="Parent Phone" class="form-control" required>
-						</div>
-        `; 
-		
+        newStudent.innerHTML = `
+            <h4 class="mt-4">Student ${studentCounter}</h4>
+            <div class="col-12 mb-3">
+                <label>Full Name *</label>
+                <input type="text" name="Student Full Name[]" class="form-control" required>
+            </div>
+            <div class="col-12 mb-3">
+                <label>Date of Birth *</label>
+                <input type="date" name="Student Date of Birth[]" class="form-control" required>
+            </div>
+            <div class="col-12 mb-3">
+                <label>Gender *</label>
+                <select class="form-select" name="Student Gender[]" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        `;
         studentList.appendChild(newStudent);
-		studentCounter++;
+        studentCounter++;
     });
+
+    function handleNetlifySubmission(event) {
+        event.preventDefault();
+        let form = event.target;
+        let data = new FormData(form);
+        fetch(form.action, { method: form.method, body: data })
+        .then(response => alert('Application submitted successfully!'))
+        .catch(error => console.error('Submission failed:', error));
+    }
 </script>
 
 

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Eduport - LMS, Education and Course Theme</title>
+	<title>STEAMINA</title>
 
 	<!-- Meta Tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="author" content="Webestica.com">
-	<meta name="description" content="Eduport- LMS, Education and Course Theme">
+	<meta name="description" content="STEAMINA- Summer Camp for African Students">
 
 	<!-- Dark mode -->
 	<script>
@@ -70,7 +70,7 @@
 	</script>
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<link rel="shortcut icon" href="assets/images/favicon.svg">
 
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,7 +112,6 @@
 
 			<!-- Main navbar START -->
 			<div class="navbar-collapse collapse" id="navbarCollapse">
-			
 			</div>
 			
 
@@ -126,501 +125,252 @@
 <main>
 
 <!-- =======================
+Main banner START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<!-- Card item START -->
+				<div class="card overflow-hidden h-200px h-xl-350px rounded-3" style="background-image:url(assets/images/bg/st_08.jpg); background-position: center left; background-size: cover;">
+					<!-- Background dark overlay -->
+					<div class="bg-overlay bg-dark opacity-6"></div>
+					
+					<!-- Card image overlay -->
+					<div class="card-img-overlay d-flex align-items-start flex-column">
+						<!-- Card overlay Top -->
+						<!-- <div class="w-100 mb-auto d-flex justify-content-end">
+							<button class="btn btn-sm btn-white mb-0"><i class="bi bi-share"></i> Share</button>
+						</div> -->
+						<!-- Card overlay bottom -->
+						<div class="w-100 mt-auto">
+							<div class="row p-0 p-sm-3">
+								<div class="col-11 col-lg-7">
+									<!-- Title -->
+									<h1 class="text-white">The Future Belongs to the Bold – Are You Ready?</h1>
+									<p class="text-white mb-0"> Your ideas, your potential, your future—everything starts here. Apply to join a dynamic community of young changemakers solving real-world problems through STEAM, design thinking, and entrepreneurship.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Card item END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Main banner END -->
+
+<!-- =======================
 Main part START -->
-<section>
+<section class="pt-0">
 	<div class="container">
 		<div class="row g-5 justify-content-between">
 			<!-- Admission form START -->
 			<div class="col-md-8 mx-auto">
 				<!-- Title -->
 				<h2 class="mb-3">Apply for Admission</h2>
-				<p>You can apply online by filling up below form or <a href="#">Download a pdf</a> and submit. Any question related admission process, please contact our admission office at <a href="#">+1 (603) 678 0488</a> or <a href="#">leadership@steamina.com</a>.</p>
-				<p class="mb-1">Before you proceed with the form please read below topics:</p>
+				<p>You can apply online by filling out the form below. Check out the  <a href="#">Brochure here</a> for more details. If you have any questions regarding the application process, please contact our team at <a href="tel:+1 603 678 0488">+1 (603) 678 0488</a> or <a href="mailto:leadership@steamina.com">leadership@steamina.com</a>.</p>
+				<p class="mb-1">Before you proceed, please note:</p>
 				<ul class="ps-3">
-					<li>Application fee is $500</li>
+					<li>Application fee is $2500</li>
+					<li>An invoice with payment instructions will be sent to your email upon completing this form</li>
 					<li>Fees are non-refundable</li>
 					<li>Field required with <span class="text-danger">*</span> are required to complete the admission form</li>
 				</ul>
-				<!-- Form START -->
-				<form class="row g-3">
-					<h5 class="mb-0">Personal information</h5>
 
-					<!-- First name -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Student first name <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="firstName">
-							</div>
+
+				<!-- STEAMINA Application Form - Supports Individual & School Applications -->
+				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4">
+					<!-- Hidden input for Netlify detection -->
+					<input type="hidden" name="form-name" value="STEAMINA-Application" />
+
+					<!-- Step 1: Select Application Type -->
+					<div class="col-12 mb-3">
+						<h5>Are you applying as an individual or on behalf of a school?</h5>
+						<select class="form-select" id="applicationType" name="Application Type" required>
+							<option value="">Select an option</option>
+							<option value="Individual">Individual</option>
+							<option value="School">School</option>
+						</select>
+					</div>
+
+					<!-- Individual Application Fields -->
+					<div id="individualFields" style="display: none;">
+						<h4 class="mt-0">Personal Information</h4>
+						<div class="col-12 mb-3">
+							<label>First Name *</label>
+							<input type="text" name="First Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Last Name *</label>
+							<input type="text" name="Last Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Date of Birth *</label>
+							<input type="date" name="Date of Birth" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Gender *</label>
+							<select class="form-select" name="Gender" required>
+								<option value="">Select</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+								<option value="Prefer Not to Say">Prefer Not to Say</option>
+							</select>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Nationality *</label>
+							<input type="text" name="Nationality" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>City & Country of Residence *</label>
+							<input type="text" name="City & Country" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Email Address *</label>
+							<input type="email" name="Email" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Phone Number *</label>
+							<input type="tel" name="Phone Number" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Current School Name *</label>
+							<input type="text" name="School" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Current Grade Level *</label>
+							<input type="text" name="Grade Level" class="form-control" required>
+						</div>
+
+						<h4 class="mt-4">Parent/Guardian Information</h4>
+						<div class="col-12 mb-3">
+							<label>Full Name *</label>
+							<input type="text" name="Parent Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Relationship to Applicant *</label>
+							<select class="form-select" name="Parent Relationship" required>
+								<option value="">Select</option>
+								<option value="Mother">Mother</option>
+								<option value="Father">Father</option>
+								<option value="Guardian">Guardian</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Parent Email *</label>
+							<input type="email" name="Parent Email" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Parent Phone *</label>
+							<input type="tel" name="Parent Phone" class="form-control" required>
+						</div>
+
+						<h4 class="mt-4">Program Interest & Goals</h4>
+						<div class="col-12 mb-3">
+							<label>Why do you want to participate in STEAMINA? *</label>
+							<textarea name="Why Participate" class="form-control" rows="3" required></textarea>
+						</div>
+						<div class="col-12 mb-3">
+							<label>What do you hope to gain from the program? *</label>
+							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
+						</div>
+
+						<h4 class="mt-4">Additional Information</h4>
+						<div class="col-12 mb-3">
+							<label>Emergency Contact Name & Phone Number *</label>
+							<input type="text" name="Emergency Contact" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>How Did You Hear About STEAMINA? *</label>
+							<select class="form-select" name="How Heard" required>
+								<option value="">Select</option>
+								<option value="Social Media">Social Media</option>
+								<option value="School">School</option>
+								<option value="Friend">Friend</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+
+						<div class="col-12 text-end">
+							<button type="submit" class="btn btn-primary">Submit Application</button>
 						</div>
 					</div>
 
-					<!-- Middle name -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Student middle name <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="middleName">
-							</div>
+					<!-- School Application Fields -->
+					<div class="mt-0" id="schoolFields" style="display: none;">
+						<h4 class="mt-4">School Information</h4>
+						<div class="col-12 mb-3">
+							<label>School Name *</label>
+							<input type="text" name="School Name" class="form-control" required>
 						</div>
-					</div>
-
-					<!-- Last name -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Student last name <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="lastName">
-							</div>
+						<div class="col-12 mb-3">
+							<label>School Address (City & Country) *</label>
+							<input type="text" name="School Address" class="form-control" required>
 						</div>
-					</div>
-
-					<!-- Gender -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Gender <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<div class="d-flex">
-									<div class="form-check radio-bg-light me-4">
-										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-										<label class="form-check-label" for="flexRadioDefault1">
-											Male
-										</label>
-									</div>
-									<div class="form-check radio-bg-light">
-										<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-										<label class="form-check-label" for="flexRadioDefault2">
-											Female
-										</label>
-									</div>
-								</div>
-							</div>
+						<div class="col-12 mb-3">
+							<label>School Representative Name *</label>
+							<input type="text" name="Representative Name" class="form-control" required>
 						</div>
-					</div>
-
-					<!-- Date of birth -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Date of birth</h6>
-							</div>
+						<div class="col-12 mb-3">
+							<label>Representative Email *</label>
+							<input type="email" name="Representative Email" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Representative Phone Number *</label>
+							<input type="tel" name="Representative Phone" class="form-control" required>
+						</div>
 						
-							<div class="col-lg-8">
-								<div class="row g-2 g-sm-4">
-									<div class="col-4">
-										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
-											<option value="">Date</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-											<option>10</option>
-											<option>11</option>
-											<option>12</option>
-											<option>13</option>
-											<option>14</option>
-											<option>15</option>
-											<option>16</option>
-											<option>17</option>
-											<option>18</option>
-											<option>19</option>
-											<option>20</option>
-											<option>21</option>
-											<option>22</option>
-											<option>23</option>
-											<option>24</option>
-											<option>25</option>
-											<option>26</option>
-											<option>27</option>
-											<option>28</option>
-											<option>29</option>
-											<option>30</option>
-											<option>31</option>
-										</select>
-									</div>
-									<div class="col-4">
-										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
-											<option value="">Month</option>
-											<option>Jan</option>
-											<option>Feb</option>
-											<option>Mar</option>
-											<option>Apr</option>
-											<option>Jun</option>
-											<option>Jul</option>
-											<option>Aug</option>
-											<option>Sep</option>
-											<option>Oct</option>
-											<option>Nov</option>
-											<option>Dec</option>
-										</select>
-									</div>
-									<div class="col-4">
-										<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
-											<option value="">Year</option>
-											<option>1990</option>
-											<option>1991</option>
-											<option>1992</option>
-											<option>1993</option>
-											<option>1994</option>
-											<option>1995</option>
-											<option>1996</option>
-											<option>1997</option>
-											<option>1998</option>
-											<option>1999</option>
-											<option>2000</option>
-											<option>2001</option>
-											<option>2002</option>
-											<option>2003</option>
-											<option>2004</option>
-											<option>2005</option>
-										</select>
-									</div>
-								</div>
-							</div>
+						
+						
+						<h4 class="mt-4">Students Information</h4>
+						<div>
+							<div id="studentsList"></div>
+							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
+	
+						</div>
+						<!-- <div id="studentsList">
+						
+							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
+						</div> -->
+
+
+
+
+						<h4 class="mt-4">Program Interest & Goals</h4>
+						<div class="col-12 mb-3">
+							<label>Why do you want to participate in STEAMINA? *</label>
+							<textarea name="Why Participate" class="form-control" rows="3" required></textarea>
+						</div>
+						<div class="col-12 mb-3">
+							<label>What do you hope your students will gain from the program? *</label>
+							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
+						</div>
+
+						<h4 class="mt-4">Additional Information</h4>
+						
+						<div class="col-12 mb-3">
+							<label>How Did You Hear About STEAMINA? *</label>
+							<select class="form-select" name="How Heard" required>
+								<option value="">Select</option>
+								<option value="Social Media">Social Media</option>
+								<option value="School">Email</option>
+								<option value="Friend">Friend</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+
+						<div class="col-12 text-end">
+							<button type="submit" class="btn btn-primary">Submit Application</button>
 						</div>
 					</div>
 
-					<!-- Email -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Email <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="email" class="form-control" id="email">
-							</div>
-						</div>
-					</div>
 
-					<!-- Phone number -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Phone number <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="phoneNumber">
-							</div>
-						</div>
-					</div>
-
-					<!-- Home address -->
-					<div class="col-12">
-						<div class="row g-xl-0">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Your address <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<textarea class="form-control" rows="3" placeholder=""></textarea>
-							</div>
-						</div>
-					</div>
-
-					<!-- City -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Select city <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<select class="form-select js-choice z-index-9 rounded-3 border-0 bg-light" aria-label=".form-select-sm">
-									<option value="">Select city</option>
-									<option>New york</option>
-									<option>Mumbai</option>
-									<option>Delhi</option>
-									<option>London</option>
-									<option>Los angeles</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<!-- State -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Select state <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<select class="form-select js-choice z-index-9 rounded-3 border-0 bg-light" aria-label=".form-select-sm">
-									<option value="">Select state</option>
-									<option>Maharashtra</option>
-									<option>California</option>
-									<option>Florida</option>
-									<option>Alaska</option>
-									<option>Ohio</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<!-- Country -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Select country <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<select class="form-select js-choice z-index-9 rounded-3 border-0 bg-light" aria-label=".form-select-sm">
-									<option value="">Select country</option>
-									<option>India</option>
-									<option>Canada</option>
-									<option>Japan</option>
-									<option>America</option>
-									<option>Dubai</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<!-- Zip code-->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Zip code <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="zipCode">
-							</div>
-						</div>
-					</div>
-
-					<!-- Divider -->
-					<hr class="my-5">
-
-					<!-- Parent detail -->
-					<h5 class="mt-0">Parent detail</h5>
-					
-					<!-- Salutation -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Salutation <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<div class="d-flex">
-									<div class="form-check radio-bg-light me-4">
-										<input class="form-check-input" type="radio" name="flexRadioSalutation" id="flexRadioSalutation1" checked>
-										<label class="form-check-label" for="flexRadioSalutation1">
-											Mr.
-										</label>
-									</div>
-									<div class="form-check radio-bg-light me-4">
-										<input class="form-check-input" type="radio" name="flexRadioSalutation" id="flexRadioSalutation2">
-										<label class="form-check-label" for="flexRadioSalutation2">
-											Mrs.
-										</label>
-									</div>
-									<div class="form-check radio-bg-light me-4">
-										<input class="form-check-input" type="radio" name="flexRadioSalutation" id="flexRadioSalutation3">
-										<label class="form-check-label" for="flexRadioSalutation3">
-											Ms.
-										</label>
-									</div>
-									<div class="form-check radio-bg-light">
-										<input class="form-check-input" type="radio" name="flexRadioSalutation" id="flexRadioSalutation4">
-										<label class="form-check-label" for="flexRadioSalutation4">
-											Dr.
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- Full name -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Full name <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="fullName">
-							</div>
-						</div>
-					</div>
-
-					<!-- Relation with applicant -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Relation with applicant <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="relation">
-							</div>
-						</div>
-					</div>
-
-					<!-- Email -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Email <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="email" class="form-control" id="email2">
-							</div>
-						</div>
-					</div>
-
-					<!-- Phone number -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Phone number <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="phoneNumber2">
-							</div>
-						</div>
-					</div>
-
-					<!-- Home address -->
-					<div class="col-12">
-						<div class="row g-xl-0">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Home address <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<textarea class="form-control" rows="3" placeholder=""></textarea>
-							</div>
-						</div>
-					</div>
-
-					<!-- Job title -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Job title <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="jobTitle">
-							</div>
-						</div>
-					</div>
-
-					<!-- Office phone number -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Office phone number</h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control">
-							</div>
-						</div>
-					</div>
-
-					<!-- Divider -->
-					<hr class="my-5">
-
-					<!-- Education -->
-					<h5 class="mt-0">Education</h5>
-
-					<!-- School or college name -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">School or college name <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="collegeName">
-							</div>
-						</div>
-					</div>
-
-					<!-- Year of passing -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Year of passing <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<select class="form-select js-choice z-index-9 border-0 bg-light" aria-label=".form-select-sm">
-									<option value="">Year</option>
-									<option>1990</option>
-									<option>1991</option>
-									<option>1992</option>
-									<option>1993</option>
-									<option>1994</option>
-									<option>1995</option>
-									<option>1996</option>
-									<option>1997</option>
-									<option>1998</option>
-									<option>1999</option>
-									<option>2000</option>
-									<option>2001</option>
-									<option>2002</option>
-									<option>2003</option>
-									<option>2004</option>
-									<option>2005</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<!-- Board of university -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Board of university <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<input type="text" class="form-control" id="board">
-							</div>
-						</div>
-					</div>
-
-					<!-- Class grad -->
-					<div class="col-12">
-						<div class="row g-xl-0 align-items-center">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">Class grad <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<select class="form-select js-choice z-index-9" aria-label=".form-select-sm">
-									<option value="">Select grad</option>
-									<option>Distinction</option>
-									<option>First class</option>
-									<option>Second class</option>
-									<option>Third class</option>
-								</select>
-							</div>
-						</div>
-					</div>
-
-					<!-- School or college address -->
-					<div class="col-12">
-						<div class="row g-xl-0">
-							<div class="col-lg-4">
-								<h6 class="mb-lg-0">School or college address <span class="text-danger">*</span></h6>
-							</div>
-							<div class="col-lg-8">
-								<textarea class="form-control" rows="3" placeholder=""></textarea>
-							</div>
-						</div>
-					</div>
-
-					<!-- Button -->
-					<div class="col-12 text-sm-end">
-						<button class="btn btn-primary mb-0">Submit</button>
-					</div>
 				</form>
-				<!-- Form END -->
+
 			</div>
 			<!-- Admission form END -->	
 		</div>
@@ -645,6 +395,98 @@ Main part END -->
 
 <!-- Template Functions -->
 <script src="assets/js/functions.js"></script>
+
+<script>
+    document.getElementById('applicationType').addEventListener('change', function() {
+        let type = this.value;
+        document.getElementById('individualFields').style.display = (type === 'Individual') ? 'block' : 'none';
+        document.getElementById('schoolFields').style.display = (type === 'School') ? 'block' : 'none';
+    });
+
+	let studentCounter = 1;
+    document.getElementById('addStudent').addEventListener('click', function() {
+        let studentList = document.getElementById('studentsList');
+        let newStudent = document.createElement('div');
+        newStudent.classList.add('student-entry', 'mt-3', 'p-3', 'border', 'rounded');
+        newStudent.innerHTML = `
+            			<h4 class="mt-4">Student ${studentCounter}</h4>
+						<div class="col-12 mb-3">
+							<label>First Name *</label>
+							<input type="text" name="First Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Last Name *</label>
+							<input type="text" name="Last Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Date of Birth *</label>
+							<input type="date" name="Date of Birth" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Gender *</label>
+							<select class="form-select" name="Gender" required>
+								<option value="">Select</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+								<option value="Prefer Not to Say">Prefer Not to Say</option>
+							</select>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Nationality *</label>
+							<input type="text" name="Nationality" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>City & Country of Residence *</label>
+							<input type="text" name="City & Country" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Email Address *</label>
+							<input type="email" name="Email" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Phone Number *</label>
+							<input type="tel" name="Phone Number" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Current School Name *</label>
+							<input type="text" name="School" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Current Grade Level *</label>
+							<input type="text" name="Grade Level" class="form-control" required>
+						</div>
+
+						<h4 class="mt-4">Parent/Guardian Information</h4>
+						<div class="col-12 mb-3">
+							<label>Full Name *</label>
+							<input type="text" name="Parent Name" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Relationship to Applicant *</label>
+							<select class="form-select" name="Parent Relationship" required>
+								<option value="">Select</option>
+								<option value="Mother">Mother</option>
+								<option value="Father">Father</option>
+								<option value="Guardian">Guardian</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Parent Email *</label>
+							<input type="email" name="Parent Email" class="form-control" required>
+						</div>
+						<div class="col-12 mb-3">
+							<label>Parent Phone *</label>
+							<input type="tel" name="Parent Phone" class="form-control" required>
+						</div>
+        `; 
+		
+        studentList.appendChild(newStudent);
+		studentCounter++;
+    });
+</script>
+
 
 </body>
 </html>

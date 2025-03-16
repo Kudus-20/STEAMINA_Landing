@@ -181,7 +181,7 @@ Main part START -->
 
 
 				<!-- STEAMINA Application Form - Supports Individual & School Applications -->
-				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4" onsubmit="handleNetlifySubmission(event)">
+				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4">
 					<!-- Hidden input for Netlify detection -->
 					<input type="hidden" name="form-name" value="STEAMINA-Application" />
 					<input type="hidden" name="bot-field" />
@@ -355,15 +355,6 @@ Main part END -->
         studentList.appendChild(newStudent);
         studentCounter++;
     });
-
-    function handleNetlifySubmission(event) {
-        event.preventDefault();
-        let form = event.target;
-        let data = new FormData(form);
-        fetch(form.action, { method: form.method, body: data })
-        .then(response => alert('Application submitted successfully!'))
-        .catch(error => console.error('Submission failed:', error));
-    }
 </script>
 
 

@@ -182,7 +182,7 @@ Main part START -->
 
 
 				<!-- STEAMINA Application Form - Supports Individual & School Applications -->
-				<form name="STEAMINA-Application" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="row g-4 p-4 mt-5 border rounded shadow-sm bg-light">
+				<form name="STEAMINA-Application" method="POST" data-netlify="true" action="/success" netlify-honeypot="bot-field" class="row g-4 p-4 mt-5 border rounded shadow-sm bg-light">
 					<!-- Hidden input for Netlify detection -->
 					<input type="hidden" name="form-name" value="STEAMINA-Application" />
 					<input type="hidden" name="bot-field" />
@@ -403,6 +403,14 @@ Main part END -->
         studentCounter++;
     });
 </script> -->
+
+	<!-- <script>
+		document.getElementById('applicationType').addEventListener('change', function() {
+			const type = this.value;
+			document.getElementById('studentFields').style.display = (type === 'Student') ? 'block' : 'none';
+			document.getElementById('schoolRepFields').style.display = (type === 'School Representative') ? 'block' : 'none';
+		});
+	</script> -->
 
 	<script>
 		document.getElementById('applicationType').addEventListener('change', function() {

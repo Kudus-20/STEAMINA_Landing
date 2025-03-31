@@ -1,414 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>STEAMINA</title>
+  <head>
+    <title>STEAMINA</title>
 
-	<!-- Meta Tags -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Webestica.com">
-	<meta name="description" content="STEAMINA- Summer Camp for African Students">
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Webestica.com" />
+    <meta
+      name="description"
+      content="STEAMINA- Summer Camp for African Students"
+    />
 
-	<!-- Dark mode -->
-	<script>
-		const storedTheme = localStorage.getItem('theme')
- 
-		const getPreferredTheme = () => {
-			if (storedTheme) {
-				return storedTheme
-			}
-			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
-		}
+    <!-- Dark mode -->
+    <script>
+      const storedTheme = localStorage.getItem("theme");
 
-		const setTheme = function (theme) {
-			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-				document.documentElement.setAttribute('data-bs-theme', 'dark')
-			} else {
-				document.documentElement.setAttribute('data-bs-theme', theme)
-			}
-		}
+      const getPreferredTheme = () => {
+        if (storedTheme) {
+          return storedTheme;
+        }
+        return window.matchMedia("(prefers-color-scheme: light)").matches
+          ? "light"
+          : "light";
+      };
 
-		setTheme(getPreferredTheme())
+      const setTheme = function (theme) {
+        if (
+          theme === "auto" &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        ) {
+          document.documentElement.setAttribute("data-bs-theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-bs-theme", theme);
+        }
+      };
 
-		window.addEventListener('DOMContentLoaded', () => {
-		    var el = document.querySelector('.theme-icon-active');
-			if(el != 'undefined' && el != null) {
-				const showActiveTheme = theme => {
-				const activeThemeIcon = document.querySelector('.theme-icon-active use')
-				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+      setTheme(getPreferredTheme());
 
-				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-					element.classList.remove('active')
-				})
+      window.addEventListener("DOMContentLoaded", () => {
+        var el = document.querySelector(".theme-icon-active");
+        if (el != "undefined" && el != null) {
+          const showActiveTheme = (theme) => {
+            const activeThemeIcon = document.querySelector(
+              ".theme-icon-active use"
+            );
+            const btnToActive = document.querySelector(
+              `[data-bs-theme-value="${theme}"]`
+            );
+            const svgOfActiveBtn = btnToActive
+              .querySelector(".mode-switch use")
+              .getAttribute("href");
 
-				btnToActive.classList.add('active')
-				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-			}
+            document
+              .querySelectorAll("[data-bs-theme-value]")
+              .forEach((element) => {
+                element.classList.remove("active");
+              });
 
-			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-				if (storedTheme !== 'light' || storedTheme !== 'dark') {
-					setTheme(getPreferredTheme())
-				}
-			})
+            btnToActive.classList.add("active");
+            activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+          };
 
-			showActiveTheme(getPreferredTheme())
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", () => {
+              if (storedTheme !== "light" || storedTheme !== "dark") {
+                setTheme(getPreferredTheme());
+              }
+            });
 
-			document.querySelectorAll('[data-bs-theme-value]')
-				.forEach(toggle => {
-					toggle.addEventListener('click', () => {
-						const theme = toggle.getAttribute('data-bs-theme-value')
-						localStorage.setItem('theme', theme)
-						setTheme(theme)
-						showActiveTheme(theme)
-					})
-				})
+          showActiveTheme(getPreferredTheme());
 
-			}
-		})
-		
-	</script>
+          document
+            .querySelectorAll("[data-bs-theme-value]")
+            .forEach((toggle) => {
+              toggle.addEventListener("click", () => {
+                const theme = toggle.getAttribute("data-bs-theme-value");
+                localStorage.setItem("theme", theme);
+                setTheme(theme);
+                showActiveTheme(theme);
+              });
+            });
+        }
+      });
+    </script>
 
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="assets/images/favicon.svg">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.svg" />
 
-	<!-- Google Font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+    />
 
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+    <!-- Plugins CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/font-awesome/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/vendor/choices/css/choices.min.css"
+    />
 
-	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  </head>
 
-</head>
+  <body>
+    <!-- Header START -->
+    <header class="navbar-light navbar-sticky">
+      <!-- Logo Nav START -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <!-- Logo START -->
+          <a class="navbar-brand me-0" href="index.html">
+            <img
+              class="light-mode-item navbar-brand-item"
+              src="assets/images/logo.svg"
+              alt="logo"
+            />
+            <img
+              class="dark-mode-item navbar-brand-item"
+              src="assets/images/logo-light.svg"
+              alt="logo"
+            />
+          </a>
+          <!-- Logo END -->
 
-<body>
+          <!-- Responsive navbar toggler -->
+          <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-animation">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
 
-<!-- Header START -->
-<header class="navbar-light navbar-sticky">
-	<!-- Logo Nav START -->
-	<nav class="navbar navbar-expand-lg">
-		<div class="container">
-			<!-- Logo START -->
-			<a class="navbar-brand me-0" href="index.html">
-				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
-				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
-			</a>
-			<!-- Logo END -->
+          <!-- Main navbar START -->
+          <div class="navbar-collapse collapse" id="navbarCollapse"></div>
+        </div>
+      </nav>
+      <!-- Logo Nav END -->
+    </header>
+    <!-- Header END -->
 
-			<!-- Responsive navbar toggler -->
-			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-animation">
-					<span></span>
-					<span></span>
-					<span></span>
-				</span>
-			</button>
-
-			<!-- Main navbar START -->
-			<div class="navbar-collapse collapse" id="navbarCollapse">
-			</div>
-			
-
-		</div>
-	</nav>
-	<!-- Logo Nav END -->
-</header>
-<!-- Header END -->
-
-<!-- **************** MAIN CONTENT START **************** -->
-<main>
-
-<!-- =======================
+    <!-- **************** MAIN CONTENT START **************** -->
+    <main>
+      <!-- =======================
 Main banner START -->
-<section class="pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<!-- Card item START -->
-				<div class="card overflow-hidden h-200px h-xl-350px rounded-3" style="background-image:url(assets/images/bg/st_08.jpg); background-position: center left; background-size: cover;">
-					<!-- Background dark overlay -->
-					<div class="bg-overlay bg-dark opacity-6"></div>
-					
-					<!-- Card image overlay -->
-					<div class="card-img-overlay d-flex align-items-start flex-column">
-						<!-- Card overlay Top -->
-						<!-- <div class="w-100 mb-auto d-flex justify-content-end">
+      <section class="pt-0">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- Card item START -->
+              <div
+                class="card overflow-hidden h-200px h-xl-350px rounded-3"
+                style="
+                  background-image: url(assets/images/bg/st_08.jpg);
+                  background-position: center left;
+                  background-size: cover;
+                "
+              >
+                <!-- Background dark overlay -->
+                <div class="bg-overlay bg-dark opacity-6"></div>
+
+                <!-- Card image overlay -->
+                <div
+                  class="card-img-overlay d-flex align-items-start flex-column"
+                >
+                  <!-- Card overlay Top -->
+                  <!-- <div class="w-100 mb-auto d-flex justify-content-end">
 							<button class="btn btn-sm btn-white mb-0"><i class="bi bi-share"></i> Share</button>
 						</div> -->
-						<!-- Card overlay bottom -->
-						<div class="w-100 mt-auto">
-							<div class="row p-0 p-sm-3">
-								<div class="col-11 col-lg-7">
-									<!-- Title -->
-									<h1 class="text-white">The Future Belongs to the Bold – Are You Ready?</h1>
-									<p class="text-white mb-0"> Your ideas, your potential, your future—everything starts here. Apply to join a dynamic community of young changemakers solving real-world problems through STEAM, design thinking, and entrepreneurship.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Card item END -->
-			</div>
-		</div>
-	</div>
-</section>
-<!-- =======================
+                  <!-- Card overlay bottom -->
+                  <div class="w-100 mt-auto">
+                    <div class="row p-0 p-sm-3">
+                      <div class="col-11 col-lg-7">
+                        <!-- Title -->
+                        <h1 class="text-white">
+                          The Future Belongs to the Bold – Are You Ready?
+                        </h1>
+                        <p class="text-white mb-0">
+                          Your ideas, your potential, your future—everything
+                          starts here. Apply to join a dynamic community of
+                          young changemakers solving real-world problems through
+                          STEAM, design thinking, and entrepreneurship.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Card item END -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- =======================
 Main banner END -->
 
-<!-- =======================
+      <!-- =======================
 Main part START -->
-<section class="pt-0">
-	<div class="container">
-		<div class="row g-5 justify-content-between">
-			<!-- Admission form START -->
-			<div class="col-md-8 mx-auto">
-				<!-- Title -->
-				<h2 class="mb-3">Apply for Admission</h2>
-				<p>You can apply online by filling out the form below. Check out the  <a href="#">Brochure here</a> for more details. If you have any questions regarding the application process, please contact our team at <a href="tel:+1 603 678 0488">+1 (603) 678 0488</a> or <a href="mailto:leadership@steamina.com">leadership@steamina.com</a>.</p>
-				<p class="mb-1">Before you proceed, please note:</p>
-				<ul class="ps-3">
-					<li>Application fee is $2500</li>
-					<li>An invoice with payment instructions will be sent to your email upon completing this form</li>
-					<li>Fees are non-refundable</li>
-					<li>Field required with <span class="text-danger">*</span> are required to complete the admission form</li>
-				</ul>
+      <section class="pt-0">
+        <div class="container">
+          <div class="row g-5 justify-content-between">
+            <!-- Admission form START -->
+            <div class="col-md-8 mx-auto">
+              <!-- Title -->
+              <h2 class="mb-3">Apply for Admission</h2>
+              <p>
+                You can apply online by filling out the form below. Check out
+                the <a href="#">Brochure here</a> for more details. If you have
+                any questions regarding the application process, please contact
+                our team at
+                <a href="tel:+1 603 678 0488">+1 (603) 678 0488</a> or
+                <a href="mailto:leadership@steamina.com"
+                  >leadership@steamina.com</a
+                >.
+              </p>
+              <p class="mb-1">Before you proceed, please note:</p>
+              <ul class="ps-3">
+                <li>Application fee is $1700</li>
+                <li>
+                  An invoice with payment instructions will be sent to your
+                  email upon completing this form
+                </li>
+                <li>
+                  If you are a school representative registering on behalf of
+                  your students, first fill out the school representative form
+                  and then fill out the student application for each student(You
+                  may skip the essay questions)
+                </li>
+                <li>Fees are non-refundable</li>
+                <li>
+                  Field required with <span class="text-danger">*</span> are
+                  required to complete the admission form
+                </li>
+              </ul>
 
+              <!-- STEAMINA Application Form - Supports Individual & School Applications -->
+              <form
+                name="STEAMINA-Application"
+                method="POST"
+                data-netlify="true"
+                class="row g-4"
+              >
+                <!-- Hidden input for Netlify detection -->
+                <input
+                  type="hidden"
+                  name="form-name"
+                  value="STEAMINA-Application"
+                />
 
-				<!-- STEAMINA Application Form - Supports Individual & School Applications -->
-				<form name="STEAMINA-Application" method="POST" data-netlify="true" class="row g-4">
-					<!-- Hidden input for Netlify detection -->
-					<input type="hidden" name="form-name" value="STEAMINA-Application" />
+                <!-- Step 1: Select Application Type -->
+                <div class="col-12 mb-3">
+                  <h5>
+                    Are you applying as an individual or on behalf of a school?
+                  </h5>
+                  <select
+                    class="form-select"
+                    id="applicationType"
+                    name="Application Type"
+                    required
+                  >
+                    <option value="">Select an option</option>
+                    <option value="Individual">Individual</option>
+                    <option value="School">School</option>
+                  </select>
+                </div>
 
-					<!-- Step 1: Select Application Type -->
-					<div class="col-12 mb-3">
-						<h5>Are you applying as an individual or on behalf of a school?</h5>
-						<select class="form-select" id="applicationType" name="Application Type" required>
-							<option value="">Select an option</option>
-							<option value="Individual">Individual</option>
-							<option value="School">School</option>
-						</select>
-					</div>
+                <!-- Individual Application Fields -->
+                <div id="individualFields" style="display: none">
+                  <h4 class="mt-0">Personal Information</h4>
+                  <div class="col-12 mb-3">
+                    <label>First Name *</label>
+                    <input
+                      type="text"
+                      name="First Name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Last Name *</label>
+                    <input
+                      type="text"
+                      name="Last Name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Date of Birth *</label>
+                    <input
+                      type="date"
+                      name="Date of Birth"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Gender *</label>
+                    <select class="form-select" name="Gender" required>
+                      <option value="">Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                      <option value="Prefer Not to Say">
+                        Prefer Not to Say
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Nationality *</label>
+                    <input
+                      type="text"
+                      name="Nationality"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>City & Country of Residence *</label>
+                    <input
+                      type="text"
+                      name="City & Country"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Email Address *</label>
+                    <input
+                      type="email"
+                      name="Email"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Phone Number *</label>
+                    <input
+                      type="tel"
+                      name="Phone Number"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Current School Name *</label>
+                    <input
+                      type="text"
+                      name="School"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Current Grade Level *</label>
+                    <input
+                      type="text"
+                      name="Grade Level"
+                      class="form-control"
+                      required
+                    />
+                  </div>
 
-					<!-- Individual Application Fields -->
-					<div id="individualFields" style="display: none;">
-						<h4 class="mt-0">Personal Information</h4>
-						<div class="col-12 mb-3">
-							<label>First Name *</label>
-							<input type="text" name="First Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Last Name *</label>
-							<input type="text" name="Last Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Date of Birth *</label>
-							<input type="date" name="Date of Birth" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Gender *</label>
-							<select class="form-select" name="Gender" required>
-								<option value="">Select</option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-								<option value="Other">Other</option>
-								<option value="Prefer Not to Say">Prefer Not to Say</option>
-							</select>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Nationality *</label>
-							<input type="text" name="Nationality" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>City & Country of Residence *</label>
-							<input type="text" name="City & Country" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Email Address *</label>
-							<input type="email" name="Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Phone Number *</label>
-							<input type="tel" name="Phone Number" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Current School Name *</label>
-							<input type="text" name="School" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Current Grade Level *</label>
-							<input type="text" name="Grade Level" class="form-control" required>
-						</div>
+                  <h4 class="mt-4">Parent/Guardian Information</h4>
+                  <div class="col-12 mb-3">
+                    <label>Full Name *</label>
+                    <input
+                      type="text"
+                      name="Parent Name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Relationship to Applicant *</label>
+                    <select
+                      class="form-select"
+                      name="Parent Relationship"
+                      required
+                    >
+                      <option value="">Select</option>
+                      <option value="Mother">Mother</option>
+                      <option value="Father">Father</option>
+                      <option value="Guardian">Guardian</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Parent Email *</label>
+                    <input
+                      type="email"
+                      name="Parent Email"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Parent Phone *</label>
+                    <input
+                      type="tel"
+                      name="Parent Phone"
+                      class="form-control"
+                      required
+                    />
+                  </div>
 
-						<h4 class="mt-4">Parent/Guardian Information</h4>
-						<div class="col-12 mb-3">
-							<label>Full Name *</label>
-							<input type="text" name="Parent Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Relationship to Applicant *</label>
-							<select class="form-select" name="Parent Relationship" required>
-								<option value="">Select</option>
-								<option value="Mother">Mother</option>
-								<option value="Father">Father</option>
-								<option value="Guardian">Guardian</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Parent Email *</label>
-							<input type="email" name="Parent Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Parent Phone *</label>
-							<input type="tel" name="Parent Phone" class="form-control" required>
-						</div>
+                  <h4 class="mt-4">Program Interest & Goals</h4>
+                  <div class="col-12 mb-3">
+                    <label>Why do you want to participate in STEAMINA? </label>
+                    <textarea
+                      name="Why Participate"
+                      class="form-control"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>What do you hope to gain from the program? </label>
+                    <textarea
+                      name="Expectations"
+                      class="form-control"
+                      rows="3"
+                    ></textarea>
+                  </div>
 
-						<h4 class="mt-4">Program Interest & Goals</h4>
-						<div class="col-12 mb-3">
-							<label>Why do you want to participate in STEAMINA? *</label>
-							<textarea name="Why Participate" class="form-control" rows="3" required></textarea>
-						</div>
-						<div class="col-12 mb-3">
-							<label>What do you hope to gain from the program? *</label>
-							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
-						</div>
+                  <h4 class="mt-4">Additional Information</h4>
+                  <div class="col-12 mb-3">
+                    <label>Emergency Contact Name & Phone Number *</label>
+                    <input
+                      type="text"
+                      name="Emergency Contact"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>How Did You Hear About STEAMINA? *</label>
+                    <select class="form-select" name="How Heard" required>
+                      <option value="">Select</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="School">School</option>
+                      <option value="Friend">Friend</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
 
-						<h4 class="mt-4">Additional Information</h4>
-						<div class="col-12 mb-3">
-							<label>Emergency Contact Name & Phone Number *</label>
-							<input type="text" name="Emergency Contact" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>How Did You Hear About STEAMINA? *</label>
-							<select class="form-select" name="How Heard" required>
-								<option value="">Select</option>
-								<option value="Social Media">Social Media</option>
-								<option value="School">School</option>
-								<option value="Friend">Friend</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
+                  <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-primary">
+                      Submit Application
+                    </button>
+                  </div>
+                </div>
 
-						<div class="col-12 text-end">
-							<button type="submit" class="btn btn-primary">Submit Application</button>
-						</div>
-					</div>
+                <!-- School Application Fields -->
+                <div class="mt-0" id="schoolFields" style="display: none">
+                  <h4 class="mt-4">School Information</h4>
+                  <div class="col-12 mb-3">
+                    <label>School Name *</label>
+                    <input
+                      type="text"
+                      name="School Name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>School Address (City & Country) *</label>
+                    <input
+                      type="text"
+                      name="School Address"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>School Representative Name *</label>
+                    <input
+                      type="text"
+                      name="Representative Name"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Representative Email *</label>
+                    <input
+                      type="email"
+                      name="Representative Email"
+                      class="form-control"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label>Representative Phone Number *</label>
+                    <input
+                      type="tel"
+                      name="Representative Phone"
+                      class="form-control"
+                      required
+                    />
+                  </div>
 
-					<!-- School Application Fields -->
-					<div class="mt-0" id="schoolFields" style="display: none;">
-						<h4 class="mt-4">School Information</h4>
-						<div class="col-12 mb-3">
-							<label>School Name *</label>
-							<input type="text" name="School Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>School Address (City & Country) *</label>
-							<input type="text" name="School Address" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>School Representative Name *</label>
-							<input type="text" name="Representative Name" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Representative Email *</label>
-							<input type="email" name="Representative Email" class="form-control" required>
-						</div>
-						<div class="col-12 mb-3">
-							<label>Representative Phone Number *</label>
-							<input type="tel" name="Representative Phone" class="form-control" required>
-						</div>
-						
-						
-						
-						<h4 class="mt-4">Students Information</h4>
-						<div>
-							<div id="studentsList"></div>
-							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
-	
-						</div>
-						<!-- <div id="studentsList">
+                  <h4 class="mt-4">Students Information</h4>
+                  <div>
+                    <div id="studentsList"></div>
+                    <button
+                      type="button"
+                      class="btn btn-secondary mt-2"
+                      id="addStudent"
+                    >
+                      + Add Student
+                    </button>
+                  </div>
+                  <!-- <div id="studentsList">
 						
 							<button type="button" class="btn btn-secondary mt-2" id="addStudent">+ Add Student</button>
 						</div> -->
 
+                  <h4 class="mt-4">Program Interest & Goals</h4>
+                  <div class="col-12 mb-3">
+                    <label>Why do you want to participate in STEAMINA? *</label>
+                    <textarea
+                      name="Why Participate"
+                      class="form-control"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label
+                      >What do you hope your students will gain from the
+                      program? *</label
+                    >
+                    <textarea
+                      name="Expectations"
+                      class="form-control"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
 
+                  <h4 class="mt-4">Additional Information</h4>
 
+                  <div class="col-12 mb-3">
+                    <label>How Did You Hear About STEAMINA? *</label>
+                    <select class="form-select" name="How Heard" required>
+                      <option value="">Select</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="School">Email</option>
+                      <option value="Friend">Friend</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
 
-						<h4 class="mt-4">Program Interest & Goals</h4>
-						<div class="col-12 mb-3">
-							<label>Why do you want to participate in STEAMINA? *</label>
-							<textarea name="Why Participate" class="form-control" rows="3" required></textarea>
-						</div>
-						<div class="col-12 mb-3">
-							<label>What do you hope your students will gain from the program? *</label>
-							<textarea name="Expectations" class="form-control" rows="3" required></textarea>
-						</div>
-
-						<h4 class="mt-4">Additional Information</h4>
-						
-						<div class="col-12 mb-3">
-							<label>How Did You Hear About STEAMINA? *</label>
-							<select class="form-select" name="How Heard" required>
-								<option value="">Select</option>
-								<option value="Social Media">Social Media</option>
-								<option value="School">Email</option>
-								<option value="Friend">Friend</option>
-								<option value="Other">Other</option>
-							</select>
-						</div>
-
-						<div class="col-12 text-end">
-							<button type="submit" class="btn btn-primary">Submit Application</button>
-						</div>
-					</div>
-
-
-				</form>
-
-			</div>
-			<!-- Admission form END -->	
-		</div>
-	</div>
-</section>
-<!-- =======================
+                  <div class="col-12 text-end">
+                    <button type="submit" class="btn btn-primary">
+                      Submit Application
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Admission form END -->
+          </div>
+        </div>
+      </section>
+      <!-- =======================
 Main part END -->
+    </main>
+    <!-- **************** MAIN CONTENT END **************** -->
 
-</main>
-<!-- **************** MAIN CONTENT END **************** -->
+    <!-- Back to top -->
+    <div class="back-top">
+      <i
+        class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"
+      ></i>
+    </div>
 
+    <!-- Bootstrap JS -->
+    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Vendors -->
+    <script src="assets/vendor/choices/js/choices.min.js"></script>
 
-<!-- Back to top -->
-<div class="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+    <!-- Template Functions -->
+    <script src="assets/js/functions.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("applicationType")
+        .addEventListener("change", function () {
+          let type = this.value;
+          document.getElementById("individualFields").style.display =
+            type === "Individual" ? "block" : "none";
+          document.getElementById("schoolFields").style.display =
+            type === "School" ? "block" : "none";
+        });
 
-<!-- Vendors -->
-<script src="assets/vendor/choices/js/choices.min.js"></script>
-
-<!-- Template Functions -->
-<script src="assets/js/functions.js"></script>
-
-<script>
-    document.getElementById('applicationType').addEventListener('change', function() {
-        let type = this.value;
-        document.getElementById('individualFields').style.display = (type === 'Individual') ? 'block' : 'none';
-        document.getElementById('schoolFields').style.display = (type === 'School') ? 'block' : 'none';
-    });
-
-	let studentCounter = 1;
-    document.getElementById('addStudent').addEventListener('click', function() {
-        let studentList = document.getElementById('studentsList');
-        let newStudent = document.createElement('div');
-        newStudent.classList.add('student-entry', 'mt-3', 'p-3', 'border', 'rounded');
-        newStudent.innerHTML = `
+      let studentCounter = 1;
+      document
+        .getElementById("addStudent")
+        .addEventListener("click", function () {
+          let studentList = document.getElementById("studentsList");
+          let newStudent = document.createElement("div");
+          newStudent.classList.add(
+            "student-entry",
+            "mt-3",
+            "p-3",
+            "border",
+            "rounded"
+          );
+          newStudent.innerHTML = `
             			<h4 class="mt-4">Student ${studentCounter}</h4>
 						<div class="col-12 mb-3">
 							<label>First Name *</label>
@@ -480,13 +708,11 @@ Main part END -->
 							<label>Parent Phone *</label>
 							<input type="tel" name="Parent Phone" class="form-control" required>
 						</div>
-        `; 
-		
-        studentList.appendChild(newStudent);
-		studentCounter++;
-    });
-</script>
+        `;
 
-
-</body>
+          studentList.appendChild(newStudent);
+          studentCounter++;
+        });
+    </script>
+  </body>
 </html>
